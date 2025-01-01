@@ -1,0 +1,6 @@
+join orang1 right
+player: Yaampun senangnya ketemu temen lama...
+leave orang1
+join player center
+player: Wahh nenek udah pulang!
+leave player

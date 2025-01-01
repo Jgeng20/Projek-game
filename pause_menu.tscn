@@ -1,0 +1,205 @@
+[gd_scene load_steps=11 format=3 uid="uid://beto2kuwtnbrf"]
+
+[ext_resource type="Script" path="res://pause_menu.gd" id="1_drixt"]
+[ext_resource type="StyleBox" uid="uid://bsoppvcfyip1d" path="res://Art/new_style_box_flat1.tres" id="2_41al6"]
+[ext_resource type="StyleBox" uid="uid://bjru16xuxjj4k" path="res://Art/new_style_box_flat.tres" id="3_7ii3a"]
+
+[sub_resource type="Animation" id="Animation_ucun5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_fwoer"]
+resource_name = "fade_to_black"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_8djfu"]
+resource_name = "fade_to_white"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4jtwf"]
+_data = {
+"RESET": SubResource("Animation_ucun5"),
+"fade_to_black": SubResource("Animation_fwoer"),
+"fade_to_white": SubResource("Animation_8djfu")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q5pol"]
+bg_color = Color(0.223529, 0.329412, 0, 0.976471)
+border_width_right = 10
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 50
+corner_radius_top_right = 10
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 10
+shadow_size = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sk5h8"]
+bg_color = Color(0, 0, 0, 1)
+border_width_right = 10
+border_width_bottom = 5
+border_color = Color(0.223529, 0.329412, 0, 0.976471)
+corner_radius_top_left = 50
+corner_radius_top_right = 10
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 10
+shadow_size = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fj4ak"]
+bg_color = Color(0.223529, 0.466667, 0, 0.976471)
+border_width_right = 10
+border_width_bottom = 5
+corner_radius_top_left = 50
+corner_radius_top_right = 10
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 10
+shadow_size = 10
+
+[node name="PauseMenu" type="Control"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_drixt")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 360.0
+offset_top = 130.0
+offset_right = -360.0
+offset_bottom = -128.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.729412)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_4jtwf")
+}
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -195.0
+offset_top = -161.0
+offset_right = 195.0
+offset_bottom = 161.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 50
+
+[node name="Button1" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 50
+theme_override_styles/hover = SubResource("StyleBoxFlat_q5pol")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_sk5h8")
+theme_override_styles/normal = SubResource("StyleBoxFlat_fj4ak")
+text = "Resume"
+
+[node name="Button2" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 50
+theme_override_styles/hover = SubResource("StyleBoxFlat_q5pol")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_sk5h8")
+theme_override_styles/normal = SubResource("StyleBoxFlat_fj4ak")
+text = "Restart"
+
+[node name="Button3" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 50
+theme_override_styles/hover = SubResource("StyleBoxFlat_q5pol")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_sk5h8")
+theme_override_styles/normal = SubResource("StyleBoxFlat_fj4ak")
+text = "Exit"
+
+[node name="Button2" type="Button" parent="."]
+visible = false
+offset_left = 129.0
+offset_top = 53.0
+offset_right = 982.0
+offset_bottom = 247.0
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 70
+theme_override_styles/hover = ExtResource("2_41al6")
+theme_override_styles/pressed = ExtResource("2_41al6")
+theme_override_styles/normal = ExtResource("2_41al6")
+text = "Thanks For Play"
+
+[node name="Button1" type="Button" parent="."]
+visible = false
+offset_left = 129.0
+offset_top = 57.0
+offset_right = 982.0
+offset_bottom = 251.0
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.403922, 0, 0, 1)
+theme_override_font_sizes/font_size = 70
+theme_override_styles/hover = ExtResource("3_7ii3a")
+theme_override_styles/pressed = ExtResource("3_7ii3a")
+theme_override_styles/normal = ExtResource("3_7ii3a")
+text = "Game Over"
+
+[connection signal="pressed" from="VBoxContainer/Button1" to="." method="_on_button_1_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button3" to="." method="_on_button_3_pressed"]

@@ -1,0 +1,50 @@
+join orang1 right
+orang1: Gimana cu apa kata nek Nayla?
+leave orang1
+join player right
+player: Kata nek nayla, beliau menunggu kedatangan nenek
+player: Kapanpun nenek mau kesana datang aja!
+player: Nek nayla juga ceritain almarhum Ibu dulu waktu masih tinggal sini nek!
+player: Ternyata Ibu orang baik yah nek
+leave player
+join orang1 right
+orang1: Iya , Ibu kamu orang yang berjasa di kampung kita
+orang1: Nenek bangga sama orang bermanfaat kayak ibumu cu
+leave orang1
+player: Adi juga bangga.... sama Ibu!
+leave player
+join orang1 right
+orang1: Syukurlah kalo begitu
+orang1: Oiya cu, kamu ingetkan jalan paling deket ke rumah nenek nayla?
+orang1: Nenek mau pergi sekarang...
+leave orang1
+join player right
+player: Ohh iya nek, nanti dari sini nenek bakal langsung ketemu Pos A. terus...
+- Ke pos B setelah A
+	player: Terus nenek pilih jalan ke pos B, lalu....
+	- Ke pos D setelah B
+		player: Lalu pergi ke pos E, nah udah itu ikutin aja jalan yang ada nanti ketemu rumah Nek nayla!
+		[signal arg="mision_complite"]
+	- Ke pos E setelah B
+		player: Lalu pergi ke pos D, nah udah itu ikutin aja jalan yang ada nanti ketemu rumah Nek nayla!
+- Ke pos C setelah A
+	player: Terus nenek pilih jalan ke pos B, lalu....
+	- Ke pos F setelah C
+		player: Lalu biar ga jauh pergi dulu ke pos F, nanti ikutin aja jalan, Rumahnya ga jauh dari situ
+	- Ke pos Tujuan setelah C
+		player: Lalu langsung aja nenek pilih jalan ke rumah Nayla!
+	- Ke pos D setelah C
+		player: Lalu pergi ke pos D, nah udah itu ikutin aja jalan yang ada nanti ketemu rumah Nek nayla!
+player: Jalan yang Adi kasih tau itu jalan paling deket nek
+player: Adi muter muter dulu kampung sekalian jalan jalan buat nyari jalannya
+leave player
+join orang1 right
+orang1: Ya sudah... nih uangnya yah cu, makasih banyak udah cari jalan buat nenek!
+join uang center
+orang1: Nenek pergi dulu yah cu..!
+leave uang
+leave orang1
+join player right
+player: Makasih nek..! Dadahh... Hati-hati dijalan!
+leave player
+[signal arg="ending"]

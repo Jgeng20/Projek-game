@@ -1,0 +1,8 @@
+join player right
+player: Misi pak, mau nanya jalan ke pos deket sini!
+join Satpam right
+Satpam: Ke barat daya ada pos A, anaknya pa soni jalan 100meter/10 menit nyampe sekitar 30 menit
+Satpam: ke tenggara ada pos D, kakek herman jalan 400meter/jam bisa sampai cuma 15 menit
+Satpam: Ke selatan ada pos C, bu lili jogging 20meter/20 detik bisa sampai 3 menit setengah kurang 10 detik
+leave Satpam
+leave player

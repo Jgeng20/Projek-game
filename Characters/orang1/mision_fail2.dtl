@@ -1,0 +1,8 @@
+join orang1 right
+orang1: nenek kecapeann cu!!
+leave orang1
+[signal arg="deadGrandma"]
+join player right
+orang1: nenek!! tidak!!!!!!!
+leave player
+[signal arg="game_over"]

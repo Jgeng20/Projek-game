@@ -1,0 +1,103 @@
+join orang1 (orang1) right [length="1.0"]
+orang1: Nenek mau minta tolong!
+leave orang1 [length="1.0"]
+join player right [length="1.0"]
+player: Minta tolong apa nek?
+leave player [length="1.0"]
+join orang1 (orang1) right [length="1.0"]
+orang1: Boleh kasihin surat ke nenek nayla ga?
+orang1: Nenek mau pergi kesana tapi lebih baik kasih kabar dulu ke nenek Naylanya..
+leave orang1 [length="1.0"]
+- tidak | [=""]
+	join player right
+	player: Ngga dulu nek, Adi capek
+	leave player
+	join orang1 right
+	orang1: Cucu kurang ajar! Awas minta jajan ke nenek!
+	leave orang1
+	[signal arg="game_over"]
+- iya
+	join player right
+	player: Boleh Nek! tapi nanti kasih jajan yah...
+	leave player
+	join orang1 right
+	orang1: Iya dehh.., Adi tau jalannya ga?
+	leave orang1
+	- jawab Tau! untuk tidak menggunakan peta
+		join player right
+		player: Tau nek!! Adi kan petualang!
+		leave player
+	- jawab Tidak! untuk menggunakan peta
+		join player right
+		player: Adi ga tau nek.., Adi cuma anak rumahan...
+		leave player
+		join orang1 right
+		orang1: Nenek juga ga tau Cu!
+		orang1: Tapi nenek punya petanya, nih ambil!
+		leave orang1
+		join player right
+		join map center
+		player: Oke nek Adi pake petanya makasih...
+		leave map
+		leave player
+		[signal arg="map_on"]
+	join orang1 right
+	orang1: Tugas kamu bukan itu aja Cu!
+	leave orang1
+	join player right
+	player: Apa lagi nek?
+	leave player
+	join orang1 right
+	orang1: Nenek kan mau kesana cu...
+	orang1: Kamu pergi sekalian carikan nenek jalan yang paling dekat yah cu!....
+	orang1: Nenek kan mau kesana nanti...
+	orang1: Kalo jalan jauh-jauh nanti nenek ga kuat cu....
+	leave orang1
+	join player right
+	player: Iyadehh nek
+	leave player
+	join orang1 right
+	orang1: Kamu tau algoritma Djikstra kan?
+	leave orang1
+	- jawab tau bila mengerti algoritma djikstra
+		join player right
+		player: Tau nekk...
+		leave player
+	- jawab tidak bila belum mengerti algoritma djikstra
+		join player right
+		player: Adi ga tau nek...
+		leave player
+		join orang1 right
+		orang1: Itu loh Algoritma buat cari jalan tercepat ke suatu titik. Masa kamu tidak belajar di sekolah
+		leave orang1
+		join player right
+		player: hehe Adi lupa nek...
+		leave player
+		join orang1 right
+		orang1: Yaudah nenek kasih tau nih..
+		orang1: Jadi nanti kamu cari jarak setiap pos dari tempat kamu berada...
+		orang1: Lalu kasih nilai setiap pos sesuai jarak yang kamu dapat..
+		orang1: Nah nanti kamu pergi ke pos yang nilainya paling kecil atau bisa dibilang paling dekat
+		orang1: Udah itu.. kamu cari jarak lagi dari pos kamu ke pos lain..
+		orang1: Lalu beri nilai pos lain dengan nilai pos tempat kamu berada di tambah jarak setiap pos lain yang kamu dapat, kecuali pos tempat kamu berada sebelumnya
+		orang1: Pilih jalan ke pos dengan nilai paling kecil
+		orang1: Ada keadaan dimana kamu bakal dapat pos dengan nilai terkecil namun pos ini udah pernah kamu kasih nilai.
+		orang1: Kalo hasil nilai penjumlahannya lebih besar di bandingkan dengan nilai pos yang sama yang kamu dapat sebelumnya
+		orang1: Kamu pergi ke pos tersebut untuk ganti jalur, jadi kamu tidak salah ambil jalan..
+		orang1: Simplenya gitu cu..
+		leave orang1
+		join player right
+		player: Owhh gitu nek, Adi masih bingung tapi...
+		leave player
+	join orang1 right
+	orang1: Nih biar gampang nenek kasih catetan juga dehh....
+	leave orang1
+	[signal arg="hint_on"]
+	join player right
+	player: Okedeh nek Adi berangkat dulu..
+	leave player
+	join orang1 right
+	orang1: Hati-hati cu!....
+	leave orang1
+[signal arg="dialogue_done"]
+[signal arg="quest_start"]

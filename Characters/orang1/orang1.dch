@@ -1,0 +1,29 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": NodePath(""),
+"_translation_id": "",
+"color": Color(1, 1, 1, 1),
+"custom_info": {
+"sound_mood_default": "",
+"sound_moods": {},
+"style": ""
+},
+"default_portrait": "orang1",
+"description": "Nenek Adi",
+"display_name": "Nenek Adi",
+"mirror": false,
+"nicknames": ["Nenek Adi"],
+"offset": Vector2(0, 0),
+"portraits": {
+"orang1": {
+"export_overrides": {
+"image": "\"res://Art/spr_annaPP.png\""
+},
+"mirror": false,
+"offset": Vector2(0, -160),
+"scale": 0.2,
+"scene": ""
+}
+},
+"scale": 1.0
+}

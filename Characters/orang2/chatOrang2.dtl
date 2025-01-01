@@ -1,0 +1,59 @@
+join player right
+player: Pagi nek Nayla!
+leave player
+[signal arg="berpaling"]
+join orang2 right
+player: Eh Adi.., Pagi juga!, udah gede yah kamu..
+orang2: Ada apa nih pagi-pagi kesini nak
+leave orang2
+join player right
+player: Adi mau nyampain kabar dari nenek tadi!
+player: Katanya nenek mau dateng kesini nek Nayla..
+leave player
+join orang2 right
+orang2: Owhh iya iya nak, sampain ke nenek yahh.. nenek Nayla ada dirumah
+orang2: Udah lama ga ketemu nenek kamu Adi..
+orang2: Dulu kita berdua terus..
+orang2: Udah 15 tahun nenekmu tinggal di rumah anaknya
+orang2: Akhirnya pulang juga
+leave orang2
+join player right
+player: Iya nih nek Nayla, Ibu Adi meninggal 2 minggu yang lalu..
+player: Nenek maunya pulang aja ke kampung dari pada sendirian di rumah pas Bapa kerja
+leave player
+join orang2 right
+orang2: Turut berduka cita yah nak...
+orang2: Ibu kamu orang yang baik..
+orang2: Dulu disini dia suka bantu-bantu orang, apalagi perihal masak memasak dia paling top
+orang2: Semenjak dia pergi, penjaga pos makannya cuma roti dan ikan asin
+leave orang2
+join player right
+player: Ngomong-ngomong, semua penjaga pos kok pada ga tau jarak antar pos yah nek?
+player: Mereka kan harusnya tau, kok di tanya malah kasih jawaban kayak quiz?
+player: Adi pusing tadi nek nyari jalannya
+leave player
+join orang2 right
+orang2: Mereka tinggal disitu cuma tinggal aja nak
+orang2: Mereka tau informasi cuma dari orang lain yang lewat.
+orang2: Karena sebenarnya mereka itu gelandangan yang ga punya rumah nak..
+orang2: Mereka akhirnya milih tinggal di pos dari pada gaada rumah.
+orang2: Warga mengizinkan dengan syarat mereka sekaligus jadi penjaga posnya
+orang2: Jadi warga ga perlu bayar biaya satpam pos nak...
+orang2: Itu kenapa jaman ibu kamu masih disini, mereka semua pada makan enak
+orang2: Karna ibu kamu yang kasih makanan gratis ke mereka
+leave orang2
+join player right
+player: Owhh gitu nek, kasian juga mereka yahh
+player: Ga Adi sangka ternyata almarhum Ibu baik banget
+player: Adi bangga sama ibu nek
+leave player
+join orang2 right
+orang2: Semua orang pasti bangga sama ibumu nak..
+orang2: Yak sudah sampaikan ke nenekmu kalo nek nayla siap menerima nenekmu kapanpun yah
+orang2: Nenek gasabar nenekmu datang nak..
+orang2: Nenek masak dulu yah, dadah sehat sehat Adi!
+leave orang2
+join player right
+player: Oke nek, makasih banyak juga.. Adi pulang dulu yahh.
+leave player
+[signal arg="quest_complite"]

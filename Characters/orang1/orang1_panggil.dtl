@@ -1,0 +1,9 @@
+join player right
+player: Sudah  seminggu dari Adi pindah ke kampung
+player: Udara disini sejuk juga...
+player: Sawah nya luas.., pasti warga sini gaada yang kelaperan
+leave player
+join orang1 right
+orang1: Cuuuu.... sini!
+leave orang1
+[signal arg="intro_exit"]

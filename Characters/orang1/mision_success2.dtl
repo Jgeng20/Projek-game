@@ -1,0 +1,14 @@
+join player right
+player: Gimana nek tadi? seru ga ketemu nenek nayla?
+leave player
+join orang1 right
+orang1: Syukurlaa cu, kita seneng-seneng bareng
+orang1: Makasih banyak yah udah bikin nenek ga capek jalan-jalan..
+orang1: Nih nenek kasih jajan lagi...
+join uang center
+leave orang1
+join player right
+player: Wahhh makasih banyak nenek!
+leave uang
+leave player
+[signal arg="game_done"]

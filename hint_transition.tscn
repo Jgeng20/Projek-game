@@ -1,0 +1,136 @@
+[gd_scene load_steps=7 format=3 uid="uid://djwgiyfk4qbo4"]
+
+[ext_resource type="Script" path="res://hint_transition.gd" id="1_1x5v1"]
+
+[sub_resource type="Animation" id="Animation_ucun5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_fwoer"]
+resource_name = "fade_to_black"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_8djfu"]
+resource_name = "fade_to_white"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4jtwf"]
+_data = {
+"RESET": SubResource("Animation_ucun5"),
+"fade_to_black": SubResource("Animation_fwoer"),
+"fade_to_white": SubResource("Animation_8djfu")
+}
+
+[sub_resource type="SystemFont" id="SystemFont_dy3fm"]
+
+[node name="hint" type="CanvasLayer"]
+layer = 0
+script = ExtResource("1_1x5v1")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = 1.0
+offset_right = -795.0
+offset_bottom = -427.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0.901961)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_4jtwf")
+}
+
+[node name="Label" type="Label" parent="."]
+offset_left = 25.0
+offset_top = 13.0
+offset_right = 370.0
+offset_bottom = 207.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = -2
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = SubResource("SystemFont_dy3fm")
+theme_override_font_sizes/font_size = 10
+text = "Cari jarak setiap pos
+
+Beri nilai setiap pos sesuai dengan jaraknya
+
+Pergi ke pos yang paling kecil nilainya
+
+Cari jarak setiap pos lagi
+
+Beri nilai setiap pos dengan menambahkan jarak pos dan nilai pos tempat kamu berada
+
+Bila nilai pos hasil penjumlahan lebih besar dari nilai pos yang      	sudah kamu berikan sebelumnya maka pergi ke pos tersebut dan ubah alur jalan 
+
+Lakukan hingga kamu dapat jalannya"
+autowrap_mode = 2
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 12.0
+offset_top = 12.0
+offset_right = 24.0
+offset_bottom = 206.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = -2
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = SubResource("SystemFont_dy3fm")
+theme_override_font_sizes/font_size = 10
+text = "--
+
+--
+
+--
+
+--
+
+--
+
+
+--
+
+
+
+--"
+autowrap_mode = 2
