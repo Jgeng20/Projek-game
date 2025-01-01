@@ -12,6 +12,7 @@ func player():
 	pass
 
 func player_movement():
+	print(Global.in_dialogue)
 	if Global.in_dialogue == true:
 		velocity = direction * 20
 		move()

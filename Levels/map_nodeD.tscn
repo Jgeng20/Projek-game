@@ -333,7 +333,7 @@ tile_set = SubResource("TileSet_i1ue7")
 
 [node name="TileMapLayer2" type="TileMapLayer" parent="y-sortObjects"]
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAAGAAsAAQAJACgAAAA=")
+tile_map_data = PackedByteArray("AAAGAAsAAQAJACgAAAD6/wQAAQAAABgAAAACAP3/AQAAABgAAAAHAAIAAQAAABgAAAD+/wgAAQAAABgAAAD7/w4AAQADABgAAAAEABMAAQADABQAAAAQAAIAAQADABgAAAALAP//AQAGAAoAAAATAAgAAQAGAAoAAAAKABYAAQAGAAcAAAADABcAAQAGAAoAAAAPAAsAAQADABwAAAAOABcAAQAHABwAAAAVABEAAQAHABwAAAA=")
 tile_set = SubResource("TileSet_i1ue7")
 
 [connection signal="body_entered" from="NodeD_to_NodeB" to="." method="_on_node_d_to_node_b_body_entered"]

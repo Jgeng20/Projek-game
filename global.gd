@@ -21,7 +21,7 @@ var dialogue_name
 var ending = false
 var deadGrandma = false
 var game_done = false
-var game_over = true
+var game_over = false
 var transition_position = Vector2(-128,164)
 
 func _ready():
@@ -42,6 +42,7 @@ func finish_changescenes():
 
 func dialog_exit(arg: String):
 	if arg == "dialogue_done":
+		print("dialogue_done")
 		in_dialogue = false
 	elif arg == "map_on":
 		MapTransition.transition()
@@ -58,6 +59,7 @@ func dialog_exit(arg: String):
 	elif arg == "berpaling":
 		orang2_berpaling = true;
 	elif arg == "quest_complite":
+		print("quest_complite")
 		in_dialogue = false
 		quest_complite = true;
 		reset_home = true
@@ -66,6 +68,7 @@ func dialog_exit(arg: String):
 	elif arg == "deadGrandma":
 		deadGrandma = true
 	elif arg == "ending":
+		print("ending")
 		in_dialogue = false
 		if map_visible == true:
 			MapTransition.transition()
